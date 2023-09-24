@@ -6,6 +6,7 @@ namespace Konyvtar
         static void Main(string[] args)
         {
             Console.WriteLine("Asd");
+            Console.WriteLine("Bsd");
         }
     }
     public class Books
