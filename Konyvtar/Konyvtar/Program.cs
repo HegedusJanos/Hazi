@@ -5,8 +5,8 @@ namespace Konyvtar
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Asd");
-            Console.WriteLine("Bsd");
+            DateTime dateTime = DateTime.Now;
+            Console.WriteLine(dateTime.AddDays(14));
         }
     }
     public class Books
