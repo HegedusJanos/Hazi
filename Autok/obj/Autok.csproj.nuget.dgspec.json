@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Games\\Vs\\Konyvtar\\Hazi\\Konyvtar\\Konyvtar\\Konyvtar.csproj": {}
+    "D:\\Games\\Vs\\Konyvtar\\Hazi\\Autok\\Autok.csproj": {}
   },
   "projects": {
-    "D:\\Games\\Vs\\Konyvtar\\Hazi\\Konyvtar\\Konyvtar\\Konyvtar.csproj": {
+    "D:\\Games\\Vs\\Konyvtar\\Hazi\\Autok\\Autok.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Games\\Vs\\Konyvtar\\Hazi\\Konyvtar\\Konyvtar\\Konyvtar.csproj",
-        "projectName": "Konyvtar",
-        "projectPath": "D:\\Games\\Vs\\Konyvtar\\Hazi\\Konyvtar\\Konyvtar\\Konyvtar.csproj",
+        "projectUniqueName": "D:\\Games\\Vs\\Konyvtar\\Hazi\\Autok\\Autok.csproj",
+        "projectName": "Autok",
+        "projectPath": "D:\\Games\\Vs\\Konyvtar\\Hazi\\Autok\\Autok.csproj",
         "packagesPath": "C:\\Users\\Janos210\\.nuget\\packages\\",
-        "outputPath": "D:\\Games\\Vs\\Konyvtar\\Hazi\\Konyvtar\\Konyvtar\\obj\\",
+        "outputPath": "D:\\Games\\Vs\\Konyvtar\\Hazi\\Autok\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -11,9 +11,40 @@ namespace Konyvtar
         {
         }
     }
-    
+    public struct Bookbuy
+    {
+        public string PersonID { get; set; }
+        public string BookID { get; set; }
+        public DateTime Date { get; set; }
+        public DateTime ReDate { get; set; }
+        public override string ToString()
+        {
+            return $"{PersonID};{BookID};{Date};{ReDate}";
+        }
+    }
     public class  BookBuy
-    { 
+    {
+        public Dictionary<int,Bookbuy> Out = new Dictionary<int,Bookbuy>();
+
+        public void Upset(Bookbuy bookbuy, int lines)
+        {
+            Dictionary<int, Bookbuy> Out = this.Out;
+            for (int i = 1; i <= lines ; i++)
+            {
+                Out[i + 1] = Out[i];
+            }
+            Out[1] = bookbuy;
+        }
+        public string Read(int lines)
+        {
+            Dictionary<int, Bookbuy> Out = this.Out;
+            return Out.GetValueOrDefault(lines).ToString();
+        }
+        public Dictionary<int, Bookbuy> Return()
+        {
+            Dictionary<int, Bookbuy> Out = this.Out;
+            return Out;
+        }
     }
     public struct Readers 
     {
@@ -31,9 +62,9 @@ namespace Konyvtar
         public void Creates(string code, Readers menber)
         {
             Dictionary<string, Readers> Readers = this.Readers;
-            Readers.Add(code,menber);
+            Readers.Add(code, menber);
         }
-        public void Delete(string code) 
+        public void Delete(string code)
         {
             Dictionary<string, Readers> Readers = this.Readers;
             Readers.Remove(code);
@@ -50,8 +81,12 @@ namespace Konyvtar
             Dictionary<string, Readers> Readers = this.Readers;
             Readers[code] = emb;
         }
+        public Dictionary<string, Readers> retur()
+        { 
+            return this.Readers; 
+        }
     }
-    public struct book
+    public struct BOOK
     {
         public string Title { get; set; }
         public string Author { get; set; }
@@ -64,28 +99,32 @@ namespace Konyvtar
     }
     public class Book
     {
-        Dictionary<string, book> Books = new Dictionary<string, book>(); 
-        public void Creates(string code, book menber)
+        Dictionary<string, BOOK> Books = new Dictionary<string, BOOK>(); 
+        public void Creates(string code, BOOK menber)
         {
-            Dictionary<string, book> Books = this.Books;
+            Dictionary<string, BOOK> Books = this.Books;
             Books.Add(code, menber);
         }
         public void Delete(string code)
         {
-            Dictionary<string, book> Books = this.Books;
+            Dictionary<string, BOOK> Books = this.Books;
             Books.Remove(code);
             Console.WriteLine("A konyv el lett tavolitva!");
         }
         public string Read(string code)
         {
-            Dictionary<string, book> Books = this.Books;
-            book value = Books[code];
+            Dictionary<string, BOOK> Books = this.Books;
+            BOOK value = Books[code];
             return value.ToString();
         }
-        public void Update(string code, book emb)
+        public void Update(string code, BOOK emb)
         {
-            Dictionary<string, book> Books = this.Books;
+            Dictionary<string, BOOK> Books = this.Books;
             Books[code] = emb;
+        }
+        public Dictionary<string, BOOK> retur()
+        {
+            return this.Books;
         }
     }
 }
