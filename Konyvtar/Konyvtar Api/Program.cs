@@ -1,4 +1,4 @@
-
+using Pass;
 namespace Konyvtar_Api
 {
     public class Program
@@ -10,7 +10,9 @@ namespace Konyvtar_Api
             // Add services to the container.
 
             builder.Services.AddControllers();
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+            builder.Services.AddSingleton<IPerson, Persons>();
+            builder.Services.AddSingleton<IBook, Books>();
+            builder.Services.AddSingleton<IOut,Outs>();
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 

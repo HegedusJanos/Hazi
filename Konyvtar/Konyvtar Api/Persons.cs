@@ -1,4 +1,5 @@
-﻿namespace Konyvtar_Api
+﻿using Pass;
+namespace Konyvtar_Api
 {
     public class Persons : IPerson
     {
