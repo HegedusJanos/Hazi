@@ -3,10 +3,10 @@ namespace Konyvtar_Api
 {
     public interface IBook
     {
-        void Add(Book b);
-        void delete(Book b);
-        Book Get(int id);
-        IEnumerable<Book> GetAll();
-        void Update(Book b);
+        Task Add(Book b);
+        Task delete(Book b);
+        Task<Book> Get(int id);
+        Task<IEnumerable<Book>> GetAll();
+        Task Update(Book b);
     }
 }

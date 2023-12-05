@@ -1,0 +1,33 @@
+﻿<h3>PersonForm</h3><EditForm Model="Person" OnValidSubmit="OnValidSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="mb-3">
+        <label class="form-label">Name</label>
+        <InputText @bind-Value="Person.Name" class="form-control" />
+        <ValidationMessage For="() => Person.Name" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Adress</label>
+        <InputText type="adress" @bind-Value="Person.Adress" class="form-control" />
+        <ValidationMessage For="() => Person.Adress" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Birth Date</label>
+        <InputDate @bind-Value="Person.BYear" class="form-control" />
+        <ValidationMessage For="() => Person.BYear" />
+    </div>
+
+    <button type="submit" class="btn btn-primary form-control">@ButtonTitle</button>
+</EditForm>
+
+@code {
+    [Parameter]
+    public Person Person { get; set; }
+
+    [Parameter]
+    public string ButtonTitle { get; set; }
+
+    [Parameter]
+    public Func<Task> OnValidSubmit { get; set; }
+}

@@ -13,31 +13,31 @@ namespace Konyvtar_Api.Controllers
             _books = book;
         }
         [HttpPost]
-        public IActionResult Add([FromBody] Book b)
+        public async Task<IActionResult> Add([FromBody] Book b)
         {
-            var exp = _books.Get(b.Id);
+            var exp = await _books.Get(b.Id);
             if (exp != null) 
             {
                 return Conflict();
             }
-            _books.Add(b);
+            await _books.Add(b);
             return Ok();
         }
         [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
-            var b = _books.Get(id);
+            var b = await _books.Get(id);
             if (b is null)
             {
                 return NotFound();
             }
-            _books.delete(b);
+            await _books.delete(b);
             return Ok();
         }
         [HttpGet("{id}")]
-        public IActionResult Get(int id) 
+        public async Task<IActionResult> Get(int id) 
         {
-            var b = _books.Get(id);
+            var b = await _books.Get(id);
             if (b is null)
             {
                 return NotFound();
@@ -45,23 +45,24 @@ namespace Konyvtar_Api.Controllers
             return Ok(b);
         }
         [HttpGet]
-        public ActionResult<List<Book>> GetAll(string id) 
+        public async Task<ActionResult<List<Book>>> GetAll(string id) 
         {
-            return Ok(_books);
+            var books = await _books.GetAll();
+            return Ok(books.ToList());
         }
         [HttpPut("{id}")]
-        public IActionResult Put(int id, [FromBody] Book b)
+        public async Task<IActionResult> Put(int id, [FromBody] Book b)
         {
             if (b.Id != id)
             {
-                return Conflict();
+                return BadRequest();
             }
             var po = _books.Get(id);
             if(po is null)
             {
                 return NotFound();
             }
-            _books.Update(b);
+            await _books.Update(b);
             return Ok();
         }
     }

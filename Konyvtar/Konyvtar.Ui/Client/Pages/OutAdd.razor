@@ -1,0 +1,19 @@
+﻿@page "/oadd"
+@inject IOutServices OutService
+@inject NavigationManager NavigationManager
+
+<h3>Add Out</h3>
+
+<OutForm Outs="Outs" ButtonTitle="Add Out" OnValidSubmit="AddOut" />
+
+@code {
+
+    private Out Outs { get; set; } = new();
+
+    private async Task AddOut()
+    {
+        await OutService.AddOutAsync(Outs);
+        NavigationManager.NavigateTo("olist");
+    }
+
+}

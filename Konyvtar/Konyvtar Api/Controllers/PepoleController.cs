@@ -13,31 +13,31 @@ namespace Konyvtar_Api.Controllers
             _person = person;
         }
         [HttpPost]
-        public IActionResult Add([FromBody] Person p)
+        public async Task<IActionResult> Add([FromBody] Person p)
         {
-            var exp = _person.Get(p.ID);
+            var exp = await _person.Get(p.ID);
             if (exp != null) 
             {
                 return Conflict();
             }
-            _person.Add(p);
+             await _person.Add(p);
             return Ok();
         }
         [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
-            var p = _person.Get(id);
+            var p = await _person.Get(id);
             if (p is null)
             {
                 return NotFound();
             }
-            _person.Delete(p);
+            await _person.Delete(p);
             return Ok();
         }
         [HttpGet("{id}")]
-        public IActionResult Get(int id) 
+        public async Task<IActionResult> Get(int id) 
         {
-            var p = _person.Get(id);
+            var p = await _person.Get(id);
             if (p is null)
             {
                 return NotFound();

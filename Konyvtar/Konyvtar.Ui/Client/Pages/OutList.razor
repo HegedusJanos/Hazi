@@ -1,0 +1,51 @@
+﻿@page "/olist"
+@inject IOutServices OutService
+@inject IBookServices BookService
+@inject IPersonService PersonService
+
+@if (Outs is not null)
+{
+    <table class="table table-hover table-bordered">
+        <thead>
+        <th>Person name</th>
+        <th>Book Title</th>
+        <th></th>
+        </thead>
+        <tbody>
+            @foreach (var outs in Outs)
+            {
+                <tr>
+                    <td>@PersonName(outs.P_ID)</td>
+                    <td>@BookTitles(outs.B_ID)</td>
+                    <td>
+                        <a href="details/@outs.ID">Details</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+
+    private IEnumerable<Out>? Outs { get; set; }
+    private IEnumerable<Book>? Book { get; set; }
+    private IEnumerable<Person>? People { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        Outs = await OutService.GetOutAsync();
+        Book = await BookService.GetBookAsync();
+        People = await PersonService.GetPeopleAsync();
+    }
+    private string PersonName(int id)
+    {
+        var p = People.Where(po =>po.ID == id).First().Name;
+        return p;
+    }
+    private string BookTitles(int id)
+    {
+        var b = Book.Where(bo => bo.Id == id).First().Title;
+        return b;
+    }
+}

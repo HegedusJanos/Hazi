@@ -1,45 +1,57 @@
-﻿using Pass;
+﻿using Konyvtar_Api.Context;
+using Microsoft.EntityFrameworkCore;
+using Pass;
 using System.Security.Claims;
 
 namespace Konyvtar_Api
 {
     public class Books : IBook
     {
-        private readonly List<Book> books = new();
+        private readonly KonyvtarApi2023Context _konytarBook;
         private readonly ILogger<Books> _logger;
 
-        public Books(ILogger<Books> logger)
+        public Books(ILogger<Books> logger, KonyvtarApi2023Context book)
         {
+            _konytarBook = book;
             _logger = logger;
         }
 
-        public void Add(Book b)
+        public async Task Add(Book b)
         {
-            books.Add(b);
+            _konytarBook.book.Add(b);
+            await _konytarBook.SaveChangesAsync();
+            _logger.LogInformation("Book added. Book: {@Book}", b);
         }
 
-        public void delete(Book b)
+        public async Task delete(Book b)
         {
-            books.Remove(b);
+            _konytarBook.book.Remove(b);
+            await _konytarBook.SaveChangesAsync();
+            _logger.LogInformation("Deleted a book.");
         }
 
-        public Book Get(int id)
+        public async Task<Book> Get(int id)
         {
-            return books.Find(match: p=>p.Id == id);
+            var book = await _konytarBook.book.FindAsync(id);
+            _logger.LogInformation("Book finded. Book: {@book}",book);
+            return book;
         }
 
-        public IEnumerable<Book> GetAll()
+        public async Task<IEnumerable<Book>> GetAll()
         {
+            var books = await _konytarBook.book.ToListAsync();
+            _logger.LogInformation("Books retrieved");
             return books;
         }
 
-        public void Update(Book b)
+        public async Task Update(Book b)
         {
-            var exBook = Get(b.Id);
+            var exBook = await Get(b.Id);
             exBook.CreatedDate = b.CreatedDate;
             exBook.Creators = b.Creators;
             exBook.Author = b.Author;
             exBook.Title = b.Title;
+            _logger.LogInformation("Book updated. Book: {@Book}",exBook);
         }
     }
 }

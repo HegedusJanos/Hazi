@@ -1,0 +1,19 @@
+﻿@page "/badd"
+@inject IBookServices BookService
+@inject NavigationManager NavigationManager
+
+<h3>Add Book</h3>
+
+<BookForm book="Book" ButtonTitle="Add Book" OnValidSubmit="AddBook" />
+
+@code {
+
+    private Book Book { get; set; } = new();
+
+    private async Task AddBook()
+    {
+        await BookService.AddBookAsync(Book);
+        NavigationManager.NavigateTo("blist");
+    }
+
+}

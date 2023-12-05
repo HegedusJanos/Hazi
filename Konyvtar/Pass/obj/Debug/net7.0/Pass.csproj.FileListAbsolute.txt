@@ -1,0 +1,12 @@
+D:\Games\Vs\Konyvtar\Hazi\Konyvtar\Pass\bin\Debug\net7.0\Pass.deps.json
+D:\Games\Vs\Konyvtar\Hazi\Konyvtar\Pass\bin\Debug\net7.0\Pass.dll
+D:\Games\Vs\Konyvtar\Hazi\Konyvtar\Pass\bin\Debug\net7.0\Pass.pdb
+D:\Games\Vs\Konyvtar\Hazi\Konyvtar\Pass\obj\Debug\net7.0\Pass.GeneratedMSBuildEditorConfig.editorconfig
+D:\Games\Vs\Konyvtar\Hazi\Konyvtar\Pass\obj\Debug\net7.0\Pass.AssemblyInfoInputs.cache
+D:\Games\Vs\Konyvtar\Hazi\Konyvtar\Pass\obj\Debug\net7.0\Pass.AssemblyInfo.cs
+D:\Games\Vs\Konyvtar\Hazi\Konyvtar\Pass\obj\Debug\net7.0\Pass.csproj.CoreCompileInputs.cache
+D:\Games\Vs\Konyvtar\Hazi\Konyvtar\Pass\obj\Debug\net7.0\Pass.dll
+D:\Games\Vs\Konyvtar\Hazi\Konyvtar\Pass\obj\Debug\net7.0\refint\Pass.dll
+D:\Games\Vs\Konyvtar\Hazi\Konyvtar\Pass\obj\Debug\net7.0\Pass.pdb
+D:\Games\Vs\Konyvtar\Hazi\Konyvtar\Pass\obj\Debug\net7.0\ref\Pass.dll
+D:\Games\Vs\Konyvtar\Hazi\Konyvtar\Pass\obj\Debug\net7.0\Pass.sourcelink.json

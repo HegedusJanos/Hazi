@@ -1,0 +1,19 @@
+@page "/add"
+@inject IPersonService PersonService
+@inject NavigationManager NavigationManager
+
+<h3>Add Person</h3>
+
+<PersonForm Person="Person" ButtonTitle="Add Person" OnValidSubmit="AddPerson" />
+
+@code {
+
+    private Person Person { get; set; } = new();
+
+    private async Task AddPerson()
+    {
+        await PersonService.AddPersonAsync(Person);
+        NavigationManager.NavigateTo("list");
+    }
+
+}

@@ -3,10 +3,10 @@ namespace Konyvtar_Api
 {
     public interface IOut
     {
-        void Add(Out o);
-        List<Out> GetB(int id);
-        List<Out> GetP(int id);
-        IEnumerable<Out> GetAll();
-        void Update(Out b);
+        Task Add(Out o);
+        Task Delete(Out o);
+        Task<Out> Get(int id);
+        Task<IEnumerable<Out>> GetAll();
+        Task Update(Out b);
     }
 }

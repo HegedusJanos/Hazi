@@ -1,0 +1,35 @@
+@page "/list"
+@inject IPersonService PersonService
+
+@if (People is not null)
+{
+    <table class="table table-hover table-bordered">
+        <thead>
+        <th>Name</th>
+        <th>Adress</th>
+        <th></th>
+        </thead>
+        <tbody>
+        @foreach (var person in People)
+        {
+            <tr>
+                <td>@person.Name</td>
+                <td>@person.Adress</td>
+                <td>
+                    <a href="details/@person.ID">Details</a>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+
+@code {
+    
+    private IEnumerable<Person>? People { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        People = await PersonService.GetPeopleAsync();
+    }
+}

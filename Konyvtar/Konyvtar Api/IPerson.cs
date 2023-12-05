@@ -3,10 +3,10 @@ namespace Konyvtar_Api
 {
     public interface IPerson
     {
-        void Add(Person p);
-        void Delete(Person p);
-        Person Get(int id);
-        IEnumerable<Person> GetAll();
-        void Update(Person p);
+        Task Add(Person p);
+        Task Delete(Person p);
+        Task<Person> Get(int id);
+        Task<IEnumerable<Person>> GetAll();
+        Task Update(Person p);
     }
 }

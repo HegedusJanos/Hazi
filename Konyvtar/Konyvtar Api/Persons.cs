@@ -1,44 +1,55 @@
-﻿using Pass;
+﻿using Konyvtar_Api.Context;
+using Microsoft.EntityFrameworkCore;
+using Pass;
+using System;
+
 namespace Konyvtar_Api
 {
     public class Persons : IPerson
     {
-        private readonly List<Person> _people = new();
+        private readonly KonyvtarApi2023Context _konyvtarPeole;
         private readonly ILogger<Persons> _logger;
-        public Persons(ILogger<Persons> logger)
+        public Persons(ILogger<Persons> logger, KonyvtarApi2023Context peole)
         {
+            _konyvtarPeole = peole;
             _logger = logger;
         }
-        public void Add(Person p)
+        public async Task Add(Person p)
         {
-            _people.Add(p);
+            _konyvtarPeole.People.Add(p);
+            await _konyvtarPeole.SaveChangesAsync();
             _logger.LogInformation("Person Added. Person{@Person}",p);
         }
 
-        public void Delete(Person p)
+        public async Task Delete(Person p)
         {
-            _people.Remove(p);
+            _konyvtarPeole.People.Remove(p);
+            await _konyvtarPeole.SaveChangesAsync();
             _logger.LogInformation("Deleted.");
         }
 
-        public Person Get(int id)
+        public async Task<Person> Get(int id)
         {
-            return _people.Find(match: p => p.ID == id);
+            var person = await _konyvtarPeole.People.FindAsync(id);
+            _logger.LogInformation("Person retrieved. Person: {@Person}", person);
+            return person;
         }
 
-        public IEnumerable<Person> GetAll()
+        public async Task<IEnumerable<Person>> GetAll()
         {
-            return _people;
+            _logger.LogInformation("People retrieved");
+            var pepole = await _konyvtarPeole.People.ToListAsync();
+            return pepole;
         }
 
-        public void Update(Person np)
+        public async Task Update(Person np)
         {
-            var exp = Get(np.ID);
+            var exp = await Get(np.ID);
             exp.Name = np.Name;
-            exp.AdressT = np.AdressT;
-            exp.AdressU = np.AdressU;
-            exp.AdressHN = np.AdressHN;
+            exp.Adress = np.Adress;
             exp.BYear = np.BYear;
+            _logger.LogInformation("Person updated. Person: {@Person}", exp);
+            await _konyvtarPeole.SaveChangesAsync();
         }
     }
 }

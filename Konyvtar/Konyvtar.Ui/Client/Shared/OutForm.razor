@@ -1,0 +1,38 @@
+﻿<h3>OutForm</h3><EditForm Model="Outs" OnValidSubmit="OnValidSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="mb-3">
+        <label class="form-label">Title</label>
+        <InputNumber @bind-Value="Outs.P_ID" class="form-control" />
+        <ValidationMessage For="() => Outs.P_ID" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Adress</label>
+        <InputNumber @bind-Value="Outs.B_ID" class="form-control" />
+        <ValidationMessage For="() => Outs.B_ID" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Adress</label>
+        <InputDate @bind-Value="Outs.outcast" class="form-control" />
+        <ValidationMessage For="() => Outs.outcast" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Birth Date</label>
+        <InputDate @bind-Value="Outs.recast" class="form-control" />
+        <ValidationMessage For="() => Outs.recast" />
+    </div>
+
+    <button type="submit" class="btn btn-primary form-control">@ButtonTitle</button>
+</EditForm>
+
+@code {
+    [Parameter]
+    public Out Outs { get; set; }
+
+    [Parameter]
+    public string ButtonTitle { get; set; }
+
+    [Parameter]
+    public Func<Task> OnValidSubmit { get; set; }
+}

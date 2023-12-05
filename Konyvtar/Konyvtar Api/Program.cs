@@ -1,4 +1,8 @@
 using Pass;
+using Microsoft.EntityFrameworkCore;
+using Serilog;
+using Konyvtar_Api.Context;
+
 namespace Konyvtar_Api
 {
     public class Program
@@ -10,9 +14,15 @@ namespace Konyvtar_Api
             // Add services to the container.
 
             builder.Services.AddControllers();
-            builder.Services.AddSingleton<IPerson, Persons>();
-            builder.Services.AddSingleton<IBook, Books>();
-            builder.Services.AddSingleton<IOut,Outs>();
+            builder.Services.AddDbContext<KonyvtarApi2023Context>(options =>
+            {
+                options.UseSqlite(builder.Configuration.GetConnectionString("SQLite"));
+                options.UseLazyLoadingProxies();
+            }
+                );
+            builder.Services.AddScoped<IPerson, Persons>();
+            builder.Services.AddScoped<IBook, Books>();
+            builder.Services.AddScoped<IOut,Outs>();
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
@@ -24,7 +34,7 @@ namespace Konyvtar_Api
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
-
+            app.UseCors(o => o.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
             app.UseHttpsRedirection();
 
             app.UseAuthorization();

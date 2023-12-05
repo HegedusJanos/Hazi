@@ -1,0 +1,91 @@
+is_global = true
+build_property.EnableAotAnalyzer = 
+build_property.EnableSingleFileAnalyzer = 
+build_property.EnableTrimAnalyzer = false
+build_property.IncludeAllContentForSelfExtract = 
+build_property.TargetFramework = net7.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = browser
+build_property.RootNamespace = Konyvtar.Ui.Client
+build_property.RootNamespace = Konyvtar.Ui.Client
+build_property.ProjectDir = D:\Games\Vs\Konyvtar\Hazi\Konyvtar\Konyvtar.Ui\Client\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 7.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\Games\Vs\Konyvtar\Hazi\Konyvtar\Konyvtar.Ui\Client
+build_property._RazorSourceGeneratorDebug = 
+
+[D:/Games/Vs/Konyvtar/Hazi/Konyvtar/Konyvtar.Ui/Client/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Games/Vs/Konyvtar/Hazi/Konyvtar/Konyvtar.Ui/Client/Pages/BookAdd.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQm9va0FkZC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Games/Vs/Konyvtar/Hazi/Konyvtar/Konyvtar.Ui/Client/Pages/BookDetails.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQm9va0RldGFpbHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Games/Vs/Konyvtar/Hazi/Konyvtar/Konyvtar.Ui/Client/Pages/BookList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQm9va0xpc3QucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Games/Vs/Konyvtar/Hazi/Konyvtar/Konyvtar.Ui/Client/Pages/OutAdd.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT3V0QWRkLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Games/Vs/Konyvtar/Hazi/Konyvtar/Konyvtar.Ui/Client/Pages/OutDetails.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT3V0RGV0YWlscy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Games/Vs/Konyvtar/Hazi/Konyvtar/Konyvtar.Ui/Client/Pages/OutList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT3V0TGlzdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Games/Vs/Konyvtar/Hazi/Konyvtar/Konyvtar.Ui/Client/Pages/PersonAdd.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGVyc29uQWRkLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Games/Vs/Konyvtar/Hazi/Konyvtar/Konyvtar.Ui/Client/Pages/PersonDetails.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGVyc29uRGV0YWlscy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Games/Vs/Konyvtar/Hazi/Konyvtar/Konyvtar.Ui/Client/Pages/PersonList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGVyc29uTGlzdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Games/Vs/Konyvtar/Hazi/Konyvtar/Konyvtar.Ui/Client/Shared/BookForm.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXEJvb2tGb3JtLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Games/Vs/Konyvtar/Hazi/Konyvtar/Konyvtar.Ui/Client/Shared/OutForm.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE91dEZvcm0ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Games/Vs/Konyvtar/Hazi/Konyvtar/Konyvtar.Ui/Client/Shared/PersonForm.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFBlcnNvbkZvcm0ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Games/Vs/Konyvtar/Hazi/Konyvtar/Konyvtar.Ui/Client/Shared/SurveyPrompt.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Games/Vs/Konyvtar/Hazi/Konyvtar/Konyvtar.Ui/Client/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Games/Vs/Konyvtar/Hazi/Konyvtar/Konyvtar.Ui/Client/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-h5cv43tkr1
+
+[D:/Games/Vs/Konyvtar/Hazi/Konyvtar/Konyvtar.Ui/Client/Shared/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-ctiiwt3c1g
